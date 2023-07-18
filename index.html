@@ -1,1 +1,101 @@
+<html class="dark">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply text-sm text-white font-light;
+            }
+            li {
+                @apply text-sm text-white cursor-pointer hover:text-indigo-300 flex flex-col items-center justify-center transition-all ease-in-out;
+            }
+
+            h2 {
+                @apply text-lg font-medium;
+            }
+        }
+
+        @layer components {
+            .btn {
+                @apply bg-indigo-500 px-4 py-2 rounded-md text-white hover:bg-orange-300 hover:text-slate-900 transition-all ease-in-out font-normal shadow-[inset_0_-2px_10px_rgba(0,0,0,0.7),0px_5px_10px_#2d2b4080] hover:shadow-[inset_0_-2px_10px_#c2410c,0px_5px_10px_#2d2b4080];
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-[#1d1a29] via-[#242133] to-[#3d3b53]">
+    <nav class="h-14 mb-0 md:mb-12 flex flex-row items-center w-full justify-end">
+        <div x-data="{ open: false }" class="flex flex-row justify-end md:flex-row w-full md:w-auto mx-8">
+            <button class="md:hidden w-10" @click="open = !open">
+                <i class="text-xl text-indigo-300 hover:text-orange-400 transition-all ease-in-out" :class=" open ? 'iconoir-cancel': 'iconoir-menu'"></i>
+              </button>
+            <ul class="hidden absolute md:static md:flex flex-row space-x-0 md:space-x-8 top-12 z-30 left-0 w-full bg-[#1d1a29] md:w-auto" :class="{ 'hidden': !open }">
+                <li>Browse</li>
+                <li>Support</li>
+                <li>Blog</li>
+                <li>Sign In</li>
+                <li class="btn">Sign Up</li>
+            </ul>
+        </div>
+    </nav>
+   
+    <main class="px-8 md:px-28">
+        <header id="hero" class="flex flex-col-reverse md:flex-row mb-8 space-x-0 md:space-x-8">
+            <div class="w-full md:w-3/5 flex flex-col justify-center items-center">
+                <div class="mb-8">
+                    <h1 class="text-left font-medium text-2xl">You're never paying full price for software again.</h1>
+                    <p>We'll send you the hottest deals straight to your inbox so you're always in on the best-kept software secrets
+                    </p>
+                </div>
+        
+                <form class="w-full grid grid-cols-6 space-x-4">
+                    <input class="col-span-4 placeholder:text-slate-200 p-2 bg-[#242133] rounded-md shadow-[inset_0_-2px_5px_rgba(0,0,0,0.3),0px_2px_10px_3px_#54517320]" type="email" placeholder="Email Address" />
+                    <button class="btn col-span-2">Sign Up</button>
+                </form>
+            </div>
+            <div class="w-full md:w-2/5 relative flex flex-col justify-center items-center">
+                <figure class="mb-20 md:mb-0 w-56 sm:w-44 md:w-60 relative mx-auto">
+                    <img class="relative mx-auto z-20 w-full" src="https://github.com/karellehofler/icodethis-jul17-2023/blob/main/clay-computer-monitor.png?raw=true" />
+                   
+                </figure>
+            </div>
+        </header>
+        <section id="features-and-benefits" class="grid grid-cols-1 md:grid-cols-12 gap-8 p-8 bg-[#242133] shadow-[inset_0_-2px_5px_rgba(0,0,0,0.3),0px_2px_10px_3px_#54517320] rounded-md text-xs">
+            <div class="col-span-4">
+               <figure class="mx-auto w-16">
+                   <img class="w-full" src="https://github.com/karellehofler/icodethis-jul17-2023/blob/main/3d-fluency-fire-flame.png?raw=true" alt="3d flame" />
+                </figure> 
+                
+                <div>
+                    <h2 class="text-center">We partner with the hottest tech companies</h2>
+                    <p class="text-center">We're talking Evernote, MailChimp, Depositphotos... just to name a few.</p>
+                </div>
+            </div>
+            <div class="col-span-4">
+               <figure class="mx-auto w-16">
+                   <img class="w-full" src="https://github.com/karellehofler/icodethis-jul17-2023/blob/main/3d-fluency-thumbs-up.png?raw=true" alt="3d flame" />
+                </figure> 
+                <div>
+                    <h2 class="text-center">We run insane deals on their products.</h2>
+                    <p class="text-center">But don't sleep on it! Our deals sell out within a couple weeks.</p>
+                </div>
+            </div>
+            <div class="col-span-4">
+               <figure class="mx-auto w-16">
+                   <img class="w-full" src="https://github.com/karellehofler/icodethis-jul17-2023/blob/main/3d-fluency-coin-wallet.png?raw=true" alt="coin in wallet" />
+                </figure> 
+                <div>
+                    <h2 class="text-center">You save thousands of dollars.</h2>
+                    <p class="text-center">And build up a full arsenal of tools to grow your business.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
